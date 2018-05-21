@@ -20,7 +20,7 @@ metadata:
   name: zk-config
 data:
   ensemble: "zk-0;zk-1;zk-2"
-  jvm.heap: "2G"
+  jvm.heap: "1G"
   tick: "2000"
   init: "10"
   sync: "5"
@@ -65,7 +65,7 @@ spec:
               topologyKey: "kubernetes.io/hostname"
       containers:
       - name: k8szk
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         image: gcr.io/google_samples/k8szk:v1
         resources:
           requests:
@@ -154,4 +154,4 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 20Gi
+          storage: 10Gi
